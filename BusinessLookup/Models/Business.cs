@@ -1,4 +1,4 @@
-namespace CretaceousPark.Models
+namespace BusinessLookup.Models
 {
     public class Business
     {
