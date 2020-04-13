@@ -8,7 +8,7 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace BusinessLookup.Migrations
 {
     [DbContext(typeof(BusinessLookupContext))]
-    [Migration("20200403215040_Initial")]
+    [Migration("20200413082611_Initial")]
     partial class Initial
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
@@ -23,13 +23,21 @@ namespace BusinessLookup.Migrations
                     b.Property<int>("BusinessId")
                         .ValueGeneratedOnAdd();
 
-                    b.Property<string>("Description");
+                    b.Property<string>("Description")
+                        .IsRequired()
+                        .HasMaxLength(200);
 
-                    b.Property<int>("Established");
+                    b.Property<string>("Established")
+                        .IsRequired()
+                        .HasMaxLength(4);
 
-                    b.Property<string>("Name");
+                    b.Property<string>("Name")
+                        .IsRequired()
+                        .HasMaxLength(100);
 
-                    b.Property<string>("Owner");
+                    b.Property<string>("Owner")
+                        .IsRequired()
+                        .HasMaxLength(50);
 
                     b.HasKey("BusinessId");
 

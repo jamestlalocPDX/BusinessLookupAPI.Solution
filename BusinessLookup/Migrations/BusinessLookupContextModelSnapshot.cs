@@ -21,13 +21,21 @@ namespace BusinessLookup.Migrations
                     b.Property<int>("BusinessId")
                         .ValueGeneratedOnAdd();
 
-                    b.Property<string>("Description");
+                    b.Property<string>("Description")
+                        .IsRequired()
+                        .HasMaxLength(200);
 
-                    b.Property<int>("Established");
+                    b.Property<string>("Established")
+                        .IsRequired()
+                        .HasMaxLength(4);
 
-                    b.Property<string>("Name");
+                    b.Property<string>("Name")
+                        .IsRequired()
+                        .HasMaxLength(100);
 
-                    b.Property<string>("Owner");
+                    b.Property<string>("Owner")
+                        .IsRequired()
+                        .HasMaxLength(50);
 
                     b.HasKey("BusinessId");
 

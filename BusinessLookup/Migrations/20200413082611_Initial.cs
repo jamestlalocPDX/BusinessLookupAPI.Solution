@@ -13,10 +13,10 @@ namespace BusinessLookup.Migrations
                 {
                     BusinessId = table.Column<int>(nullable: false)
                         .Annotation("MySql:ValueGenerationStrategy", MySqlValueGenerationStrategy.IdentityColumn),
-                    Name = table.Column<string>(nullable: true),
-                    Description = table.Column<string>(nullable: true),
-                    Established = table.Column<int>(nullable: false),
-                    Owner = table.Column<string>(nullable: true)
+                    Name = table.Column<string>(maxLength: 100, nullable: false),
+                    Description = table.Column<string>(maxLength: 200, nullable: false),
+                    Established = table.Column<string>(maxLength: 4, nullable: false),
+                    Owner = table.Column<string>(maxLength: 50, nullable: false)
                 },
                 constraints: table =>
                 {
