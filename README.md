@@ -8,20 +8,14 @@
 
 _This C# codebase will build an API that contains an object-oriented list of information on local businesses and shops._
 
-## **Behavior Driven Development**
+## **Request Types**
 
-| Behavior | Input | Output |
+| Request | Type | Output |
 |----------|:-----:|--------|
-| User enters Business name. | "Tech N Stuff." | newBusiness.name == "Tech N Stuff." |
-| User enters Business description. | "A store that sells the latest modern tech." | newBusiness.description == "A store that sells the latest modern tech." |
-| User enters an Owner name to a Business. | "John" | newBusiness.Owner.name == "John" |
-| User is greeted with a welcome splash page. | localhost:5000/ | route == "/" |
-| User clicks on a link that sends him to a form where he can add a Business. | Click "Add a Business" | HttpPost ActionResult' == Create(Business business) |
-| User clicks on a Business name and it goes to a page that displays all of that Business' information. | Click "Tech N Stuff" | ActionResult ==  Details() |
-| User clicks on a link that presents a form to edit a particular Business. | Click "edit business" | HttPost ActionResult == Edit (int id) |
-| User clicks on a link that deletes a business and all of its information. | Click "delete business" | ActionResult ==  Details() |
-| User enters an email and a password to create/register an account | Email: "User@email.com" Password: **** | CRUD functionality becomes available for the user. |
-
+| Query == Name | String | Surfboards R Us |
+| Query == Description | String | We sell the gnarliest surfboards. |
+| Query == Established. | String | 1978|
+| Query == Owner. | String | Andy |
 
 ## **Minimum Viable Product (MVP)**
 
