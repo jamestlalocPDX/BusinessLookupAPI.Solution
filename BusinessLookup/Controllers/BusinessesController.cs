@@ -1,6 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using BusinessLookup.Models;
 
 namespace BusinessLookup.Controllers
@@ -18,9 +19,39 @@ namespace BusinessLookup.Controllers
 
     // GET api/businesses
     [HttpGet]
-    public ActionResult<IEnumerable<Business>> Get()
+    public ActionResult<IEnumerable<Business>> Get(string name, string description, string established, string owner)
     {
-      return _db.Businesses.ToList();
+      var query = _db.Businesses.AsQueryable();
+
+      if (name != null)
+      {
+        query = query.Where(entry => entry.Name == name);
+      }
+
+      if (description != null)
+      {
+        query = query.Where(entry => entry.Description == description);
+      }
+
+      if (established != null)
+      {
+        query = query.Where(entry => entry.Established == established);
+      }
+
+      if (owner != null)
+      {
+        query = query.Where(entry => entry.Owner == owner);
+      }
+
+      List<Business> businessList = query.ToList();
+      return businessList;
+    }
+
+    // GET api/businesses/5
+    [HttpGet("{id}")]
+    public ActionResult<Business> Get(int id)
+    {
+      return _db.Businesses.FirstOrDefault(entry => entry.BusinessId == id);
     }
 
     // POST api/businesses
@@ -28,6 +59,25 @@ namespace BusinessLookup.Controllers
     public void Post([FromBody] Business business)
     {
       _db.Businesses.Add(business);
+      _db.SaveChanges();
+    }
+
+    // PUT api/businesses/1
+    [HttpPut("{id}")]
+    public void Put(int id, [FromBody] Business business)
+    {
+      business.BusinessId = id;
+      _db.Entry(business).State = EntityState.Modified;
+      _db.SaveChanges();
+    }
+
+    // DELETE api/busineses/1
+    // [Authorize]
+    [HttpDelete("{id}")]
+    public void Delete(int id)
+    {
+      var reviewToDelete = _db.Businesses.FirstOrDefault(entry => entry.BusinessId == id);
+      _db.Businesses.Remove(reviewToDelete);
       _db.SaveChanges();
     }
   }
