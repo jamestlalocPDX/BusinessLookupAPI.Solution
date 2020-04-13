@@ -43,8 +43,7 @@ namespace BusinessLookup.Controllers
         query = query.Where(entry => entry.Owner == owner);
       }
 
-      List<Business> businessList = query.ToList();
-      return businessList;
+      return query.ToList();;
     }
 
     // GET api/businesses/5
@@ -76,8 +75,8 @@ namespace BusinessLookup.Controllers
     [HttpDelete("{id}")]
     public void Delete(int id)
     {
-      var reviewToDelete = _db.Businesses.FirstOrDefault(entry => entry.BusinessId == id);
-      _db.Businesses.Remove(reviewToDelete);
+      var businessToDelete = _db.Businesses.FirstOrDefault(entry => entry.BusinessId == id);
+      _db.Businesses.Remove(businessToDelete);
       _db.SaveChanges();
     }
   }
