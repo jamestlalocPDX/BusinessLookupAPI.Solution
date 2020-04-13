@@ -3,7 +3,7 @@ using Microsoft.EntityFrameworkCore.Migrations;
 
 namespace BusinessLookup.Migrations
 {
-    public partial class Initial : Migration
+    public partial class Redo : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {

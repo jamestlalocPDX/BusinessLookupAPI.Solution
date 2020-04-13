@@ -8,8 +8,8 @@ using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 namespace BusinessLookup.Migrations
 {
     [DbContext(typeof(BusinessLookupContext))]
-    [Migration("20200413082611_Initial")]
-    partial class Initial
+    [Migration("20200413083056_Redo")]
+    partial class Redo
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
