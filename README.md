@@ -8,6 +8,11 @@
 
 _This C# codebase will build an API that contains an object-oriented list of information on local businesses and shops._
 
+## Specification user stories:
+* A user is able to GET and POST businesses.
+* A user is able to GET businesses by name, description, or established date, and owner.
+* A user is able to PUT and DELETE business.
+
 ## **Request Types**
 
 | Request | Type | Output |
@@ -69,10 +74,10 @@ Stretch goals include:
 4. Open this repository from within your terminal and navigate to the project folder: `PierresTreats/`.
 5. Run the command `dotnet restore`.
 6. Run the command `dotnet build`.
-7. If build is successful, run the command `dotnet ef migrations add Initial`. If build failed, make necessary updates and repeat steps 5-7.
-8. Run the command `dotnet ef database update`.
-9. Use `dotnet run` to generate a local server.
-10. Copy and paste the generated `localhost:5000` onto your URL.
+7. If build is successful, run the command `dotnet ef database update`. If build failed, make necessary updates and repeat steps 5-7.
+8. Use `dotnet run` to generate a local server.
+9. Copy and paste the generated `localhost:5000` onto your URL.
+10. To access the API UI, copy and paste `http://localhost:5000/swagger`.
 
 *Downloading this repository:*
 
@@ -82,10 +87,10 @@ Stretch goals include:
 4. Open this repository from within your terminal and navigate to the project folder: `PierresTreats/`.
 5. Run the command `dotnet restore`.
 6. Run the command `dotnet build`.
-7. If build is successful, run the command `dotnet ef migrations add Initial`. If build failed, make necessary updates and repeat steps 5-7.
-8. Run the command `dotnet ef database update`.
+7. If build is successful, run the command `dotnet ef database update`. If build failed, make necessary updates and repeat steps 5-7.
 8. Use `dotnet run` to generate a local server.
-10. Copy and paste the generated `localhost:5000` onto your URL.
+9. Copy and paste the generated `localhost:5000` onto your URL.
+10. To access the API UI, copy and paste `http://localhost:5000/swagger`.
 
 ## **Known Bugs**
 
